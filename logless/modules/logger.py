@@ -1,6 +1,6 @@
 import logging
-from logless.handlers.request import SplunkHandler, ElasticSearchHandler, APIHandler, EmailHandler, SNMPHandler
-from logless.config.settings import LogConfig
+from logease.handlers.request import SplunkHandler, ElasticSearchHandler, APIHandler, EmailHandler, SNMPHandler
+from logease.config.settings import LogConfig
 
 class CustomFormatter(logging.Formatter):
     grey = "\x1b[38;21m"

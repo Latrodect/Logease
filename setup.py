@@ -5,7 +5,7 @@ with open('README.md', 'r', encoding='utf-8') as f:
 
 setup(
     name='logease',
-    version='0.1.0',
+    version='0.2.0',
     description='A Python logging library designed to replace traditional logging mechanisms using decorators and modules.',
     long_description=long_description,
     long_description_content_type='text/markdown',

@@ -1,7 +1,7 @@
 import time
 from functools import wraps
 
-from logless.modules.logger import Logger
+from logease.modules.logger import Logger
 
 logger = Logger()
 
@@ -14,7 +14,7 @@ def function_tracer(level="INFO", format_string="{func_name} called with args: {
     - The value returned by the function or any exceptions raised.
     - The execution time of the function.
     - The module and file name where the function is defined.
-    The logging is done using the Logger instance configured in the logless package.
+    The logging is done using the Logger instance configured in the logease package.
 
     Args:
         level (str): The log level for logging function call details.

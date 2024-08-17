@@ -1,1 +1,2 @@
-colorlog
+colorlog==6.8.2
+pysnmp==6.2.5

@@ -1,4 +1,4 @@
-from logless.decorators.tracer import (
+from logease.decorators.tracer import (
     function_tracer,
     class_method_tracer,
     property_getter_tracer,

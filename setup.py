@@ -15,8 +15,14 @@ setup(
     packages=find_packages(),
     install_requires=[
         'colorlog',
-        'pysnmp'
+        'pysnmp',
+        'termcolor'
     ],
+    entry_points={
+        'console_scripts': [
+            'logease=logease.cli:main',
+        ],
+    },
     package_data={},
     include_package_data=True,
     classifiers=[

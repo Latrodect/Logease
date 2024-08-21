@@ -5,7 +5,7 @@ with open('README.md', 'r', encoding='utf-8') as f:
 
 setup(
     name='logease',
-    version='0.2.0',
+    version='0.3.0',
     description='A Python logging library designed to replace traditional logging mechanisms using decorators and modules.',
     long_description=long_description,
     long_description_content_type='text/markdown',
@@ -15,8 +15,14 @@ setup(
     packages=find_packages(),
     install_requires=[
         'colorlog',
-        'pysnmp'
+        'pysnmp',
+        'termcolor'
     ],
+    entry_points={
+        'console_scripts': [
+            'logease=logease.cli:main',
+        ],
+    },
     package_data={},
     include_package_data=True,
     classifiers=[

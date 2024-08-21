@@ -1,6 +1,7 @@
 import argparse
 from termcolor import cprint
 
+
 class CommandLineInterface:
     _instance = None
 
@@ -8,7 +9,7 @@ class CommandLineInterface:
         if cls._instance is None:
             cls._instance = super().__new__(cls)
         return cls._instance
-    
+
     def __init__(self) -> None:
         """
         Initializes the command-line interface.
@@ -32,7 +33,17 @@ Logease is CLI Tools for Configure logease package.
         cprint(banner, "light_red")
 
     def run(self):
-        pass
+        parser = argparse.ArgumentParser(description="Logease: Configure your logger.")
+        sub_parsers = parser.add_subparsers(dest="command", help="Avaiable commands")
+
+        sub_parsers.add_parser("edit", help="Configuration for logease middleware")
+
+        args = parser.parse_args()
+
+        if args.command == "config":
+            field = input("Configuration Field:")
+            # TODO: implement change config logic in here.
+
 
 def main():
     """
@@ -40,6 +51,7 @@ def main():
     """
     cli = CommandLineInterface()
     cli.run()
+
 
 if __name__ == "__main__":
     main()

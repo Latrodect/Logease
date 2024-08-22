@@ -63,6 +63,33 @@ Supported keys include:
 
         print(description)
 
+    def show_commands(self):
+        help = """
+Available Commands:
+
+1. **help**: 
+   - Displays this help text.
+   - Example: `logease help`
+
+2. **available**: 
+   - Lists all available configuration options that you can modify.
+   - Example: `logease available`
+
+3. **config**: 
+   - Updates the configuration attribute of the instance based on the provided key-value pair.
+   - Example: `logease config`
+
+Usage Examples:
+
+- To see the list of commands: `help`
+- To view all configurable options: `available`
+
+Supported configuration keys include options like "level", "log_format", "splunk_host", and more.
+Use the `available` command to see the full list.
+    """
+
+        print(help)
+
     def run(self):
         parser = argparse.ArgumentParser(description="Logease: Configure your logger.")
         sub_parsers = parser.add_subparsers(dest="command", help="Available commands")
@@ -72,6 +99,10 @@ Supported keys include:
         )
         available_command_parser = sub_parsers.add_parser(
             "available", help="Show available edit options for config."
+        )
+
+        help_command_parser = sub_parsers.add_parser(
+            "help", help="Show available commands."
         )
 
         args = parser.parse_args()
@@ -96,6 +127,9 @@ Supported keys include:
 
         elif args.command == "available":
             self.show_available_configuration()
+
+        elif args.command == "help":
+            self.show_commands()
 
 
 def main():
